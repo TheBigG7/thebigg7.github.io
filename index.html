@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacro de Examen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <p id="total-questions-display"></p>
+        <h1>Simulacro de Examen</h1>
+        <div id="quiz-container">
+            <div id="question-container" class="hide">
+                <div id="question-counter"></div>
+                <div id="question">Pregunta</div>
+                <div id="answer-buttons" class="btn-grid"></div>
+                <div id="correct-answer-container" class="hide"></div>
+                <div id="draggable-options-container" class="hide"></div>
+            </div>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Empezar</button>
+                <button id="check-btn" class="check-btn btn hide">Comprobar</button>
+                <button id="show-answer-btn" class="show-answer-btn btn hide">Mostrar Respuesta</button>
+                <button id="next-btn" class="next-btn btn hide">Siguiente</button>
+            </div>
+        </div>
+        <div id="result-container" class="hide">
+            <h2>Tu puntaje</h2>
+            <p id="score"></p>
+            <button id="restart-btn" class="restart-btn btn">Repetir Examen</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
