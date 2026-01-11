@@ -526,10 +526,9 @@
             const phoneLink = document.getElementById('modal-phone-link');
             
             // 1. Muestra el número visualmente tal cual está en el CV
-            phoneLink.textContent = phone + " (WhatsApp)"; 
+            phoneLink.textContent = phone; 
             
             // 2. Limpia el número para la API (quita espacios y símbolos)
-            // Ejemplo: "+593 98 405 3639" se convierte en "593984053639"
             const cleanPhone = phone.replace(/\D/g, ''); 
             
             // 3. Define el mensaje predeterminado y lo codifica para URL
