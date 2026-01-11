@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge Barreto | Desarrollador de Software</title>
+    <meta name="description" content="Portafolio profesional de Jorge Barreto, Tecnólogo Superior Universitario en Desarrollo de Software.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue-600
+                        secondary: '#1e40af', // Blue-800
+                        dark: '#0f172a', // Slate-900
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animaciones suaves */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-xl text-primary tracking-tight">JB.</span>
+                </div>
+                <!-- Menú Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Inicio</a>
+                    <a href="#acerca" class="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Sobre Mí</a>
+                    <a href="#experiencia" class="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Proyectos</a>
+                    <a href="#habilidades" class="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Habilidades</a>
+                    <a href="#contacto" class="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Contacto</a>
+                </div>
+                <!-- Botón Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Inicio</a>
+                <a href="#acerca" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Sobre Mí</a>
+                <a href="#experiencia" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Proyectos</a>
+                <a href="#habilidades" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Habilidades</a>
+                <a href="#contacto" class="block px-3 py-2 text-base font-medium text-slate-600 hover:text-primary hover:bg-slate-50 rounded-md">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-gradient-to-br from-slate-50 to-blue-50/50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left fade-in-up">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-4">Disponible para trabajar</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-dark mb-6">
+                        Hola, soy <span class="text-primary">Jorge Barreto</span>
+                    </h1>
+                    <h2 class="text-xl sm:text-2xl text-slate-600 mb-8 font-light">
+                        Tecnólogo Superior Universitario en <span class="font-semibold text-slate-800">Desarrollo de Software</span>
+                    </h2>
+                    <p class="text-slate-600 text-lg mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Profesional enfocado en crear soluciones tecnológicas de impacto. Especializado en desarrollo Full Stack, aplicaciones móviles y transformación digital.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contacto" class="px-8 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-secondary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Contactarme
+                        </a>
+                        <a href="#" onclick="window.print()" class="px-8 py-3 rounded-lg bg-white text-slate-700 border border-slate-200 font-semibold hover:bg-slate-50 transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2">
+                            <i class="fas fa-file-pdf"></i> Guardar CV
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center justify-center lg:justify-start gap-6 text-slate-400">
+                        <a href="mailto:jorge.barreto@tecazuay.edu.ec" class="hover:text-primary transition-colors text-2xl"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors text-2xl"><i class="fab fa-github"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors text-2xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Ilustración / Avatar -->
+                <div class="relative lg:block fade-in-up delay-200">
+                    <div class="absolute -top-4 -right-4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                    <div class="absolute -bottom-8 -left-4 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+                    
+                    <div class="relative mx-auto w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-white p-2 rounded-full shadow-2xl ring-1 ring-slate-100 overflow-hidden">
+                        <!-- Placeholder para foto real -->
+                        <div class="w-full h-full bg-slate-200 rounded-full flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-user text-6xl text-slate-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="acerca" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark">Sobre Mí</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 space-y-6 text-lg text-slate-600 leading-relaxed">
+                    <p>
+                        Soy un profesional en Informática con formación tecnológica sólida. Me caracterizo por mi comunicación clara, pensamiento crítico y capacidad de adaptación, cualidades que me impulsan a crecer en entornos dinámicos.
+                    </p>
+                    <p>
+                        Busco una posición desafiante que me permita aplicar y ampliar mis conocimientos en lenguajes de programación, frameworks y bases de datos, mientras colaboro en equipos multidisciplinarios para resolver problemas complejos.
+                    </p>
+                    <p>
+                        Aspiro a contribuir con soluciones tecnológicas que generen un impacto positivo en la sociedad y fortalezcan la transformación digital.
+                    </p>
+                    
+                    <div class="pt-6 grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-bold text-dark mb-2">Educación</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-graduation-cap text-primary mt-1"></i>
+                                    <span>
+                                        <strong>Tecnología Superior Universitaria en Desarrollo de Software</strong><br>
+                                        Inst. Tec. Sup. Universitario del Azuay (2022-2025)
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark mb-2">Idiomas</h4>
+                            <ul class="text-sm space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-500"></i>
+                                    Español (Nativo)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-check text-green-500"></i>
+                                    Inglés (Intermedio)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                    <h3 class="font-bold text-xl mb-6 text-dark">Soft Skills</h3>
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Trabajo en Equipo</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Resolución de Problemas</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Adaptabilidad</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-700">Gestión del Tiempo</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia / Proyectos -->
+    <section id="experiencia" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark">Experiencia y Proyectos</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600">Proyectos destacados durante mi formación y experiencia</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Proyecto 1 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-100 flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-blue-600 p-8 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <i class="fas fa-mobile-alt text-6xl mb-4 opacity-80"></i>
+                            <h3 class="text-xl font-bold">Turismo Tec</h3>
+                            <p class="text-blue-100 text-sm mt-2">App Multiplataforma</p>
+                            <span class="inline-block mt-4 px-3 py-1 bg-blue-700 rounded-full text-xs font-mono">2024 - 2025</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Aplicación Multiplataforma de Turismo</h3>
+                        <p class="text-slate-600 mb-6">
+                            Desarrollo de una aplicación móvil (Web, Android, iOS) para el sector turístico. Integra un mapa interactivo con lugares, hoteles y restaurantes, permitiendo reservas y sugerencias personalizadas mediante un ChatBot con IA.
+                        </p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-sm font-semibold text-slate-800 mb-3">Tecnologías utilizadas:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Angular</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Flutter</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Spring Boot</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">GPT API</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Docker</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">GCP Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-slate-100 flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-slate-800 p-8 flex items-center justify-center text-white">
+                        <div class="text-center">
+                            <i class="fas fa-building-columns text-6xl mb-4 opacity-80"></i>
+                            <h3 class="text-xl font-bold">GAD Santa Isabel</h3>
+                            <p class="text-slate-300 text-sm mt-2">Plataforma Web Gubernamental</p>
+                            <span class="inline-block mt-4 px-3 py-1 bg-slate-700 rounded-full text-xs font-mono">2024</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Plataforma Tecnológica de Gestión</h3>
+                        <p class="text-slate-600 mb-6">
+                            Plataforma web para fortalecer la coordinación estratégica y gestión de proyectos públicos. Mejora la planificación, fomenta la participación ciudadana y la transparencia en la gestión pública.
+                        </p>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-sm font-semibold text-slate-800 mb-3">Tecnologías utilizadas:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Angular</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Spring Boot</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Docker</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">AWS</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium">Trello</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades Técnicas -->
+    <section id="habilidades" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark">Competencias Técnicas</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Lenguajes -->
+                <div class="p-6 rounded-xl border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                        <i class="fas fa-code text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Lenguajes</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Java</li>
+                        <li>• Python</li>
+                        <li>• JavaScript / TypeScript</li>
+                        <li>• Dart</li>
+                    </ul>
+                </div>
+
+                <!-- Web & Frameworks -->
+                <div class="p-6 rounded-xl border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                        <i class="fas fa-layer-group text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Web & Frameworks</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Angular & Node.js</li>
+                        <li>• Spring Boot</li>
+                        <li>• Flutter</li>
+                        <li>• HTML5 & CSS3</li>
+                    </ul>
+                </div>
+
+                <!-- Data & Cloud -->
+                <div class="p-6 rounded-xl border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                        <i class="fas fa-database text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Data & Cloud</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• MySQL & PostgreSQL</li>
+                        <li>• MongoDB</li>
+                        <li>• Docker</li>
+                        <li>• AWS & Google Cloud</li>
+                    </ul>
+                </div>
+
+                <!-- Áreas Conocimiento -->
+                <div class="p-6 rounded-xl border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all group">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Conocimientos</h3>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Inteligencia Artificial</li>
+                        <li>• Arquitectura de Software</li>
+                        <li>• Seguridad Informática</li>
+                        <li>• Infraestructura & DevOps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto" class="bg-dark text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">¿Trabajamos juntos?</h2>
+                    <p class="text-slate-400 mb-8 max-w-md">
+                        Estoy disponible para nuevas oportunidades laborales. Si buscas un desarrollador comprometido con la calidad y la innovación, contáctame.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-primary">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="text-lg">(+593) 968 715 120</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-primary">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="text-lg">jorge.barreto@tecazuay.edu.ec</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sección de Referencias Actualizada -->
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-6">Referencias Profesionales</h3>
+                    <div class="space-y-4">
+                        <!-- Referencia 1 -->
+                        <button onclick="openReferenceModal('Diego Rodríguez', 'CTO - SAC Agricultura S.A.S.', '+593 98 405 3639', 'dprodrigueza7@gmail.com')" class="w-full text-left p-4 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 group">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-white group-hover:text-primary transition-colors">Diego Rodríguez</p>
+                                    <p class="text-sm text-slate-400">CTO - SAC Agricultura S.A.S.</p>
+                                </div>
+                                <i class="fas fa-eye text-slate-500 group-hover:text-primary"></i>
+                            </div>
+                        </button>
+                        
+                        <!-- Referencia 2 -->
+                        <button onclick="openReferenceModal('Jose Quinde', 'Técnico de gestión - Univ. Católica de Cuenca', '+593 99 135 2595', 'jgquinded@gmail.com')" class="w-full text-left p-4 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 group">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-white group-hover:text-primary transition-colors">Jose Quinde</p>
+                                    <p class="text-sm text-slate-400">Técnico de Gestión</p>
+                                </div>
+                                <i class="fas fa-eye text-slate-500 group-hover:text-primary"></i>
+                            </div>
+                        </button>
+                        
+                        <!-- Referencia 3 -->
+                        <button onclick="openReferenceModal('Lic. Maria Vintimilla', 'Licenciada en Educación / Docente', '+593 99 403 0590', '')" class="w-full text-left p-4 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700 group">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-white group-hover:text-primary transition-colors">Lic. Maria Vintimilla</p>
+                                    <p class="text-sm text-slate-400">Docente / Ref. Personal</p>
+                                </div>
+                                <i class="fas fa-eye text-slate-500 group-hover:text-primary"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4 italic text-center">Clic en una referencia para ver contacto.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+                <p>&copy; 2026 Jorge Barreto. Todos los derechos reservados.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Referencias -->
+    <div id="reference-modal" class="fixed inset-0 z-[60] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity" onclick="closeReferenceModal()"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg animate-[fadeInUp_0.3s_ease-out]">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <i class="fas fa-address-card text-primary text-lg"></i>
+                            </div>
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                                <h3 class="text-xl font-semibold leading-6 text-slate-900" id="modal-name">Nombre Referencia</h3>
+                                <p class="text-sm text-slate-500 mb-4" id="modal-role">Cargo</p>
+                                
+                                <div class="bg-slate-50 rounded-lg p-4 space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-slate-100">
+                                            <i class="fas fa-phone"></i>
+                                        </div>
+                                        <a id="modal-phone-link" href="#" class="text-slate-700 font-medium hover:text-primary transition-colors">Teléfono</a>
+                                    </div>
+                                    <div class="flex items-center gap-3" id="email-container">
+                                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-slate-100">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <a id="modal-email-link" href="#" class="text-slate-700 font-medium hover:text-primary transition-colors">Email</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 sm:mt-0 sm:w-auto" onclick="closeReferenceModal()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript para interactividad -->
+    <script>
+        // Menú móvil
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cambio de estilo del navbar al hacer scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/90', 'bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white/90');
+            }
+        });
+
+        // Lógica del Modal
+        function openReferenceModal(name, role, phone, email) {
+            document.getElementById('modal-name').textContent = name;
+            document.getElementById('modal-role').textContent = role;
+            
+            const phoneLink = document.getElementById('modal-phone-link');
+            phoneLink.textContent = phone;
+            phoneLink.href = `tel:${phone.replace(/\s+/g, '')}`;
+            
+            const emailContainer = document.getElementById('email-container');
+            const emailLink = document.getElementById('modal-email-link');
+            
+            if (email) {
+                emailContainer.style.display = 'flex';
+                emailLink.textContent = email;
+                emailLink.href = `mailto:${email}`;
+            } else {
+                emailContainer.style.display = 'none';
+            }
+
+            document.getElementById('reference-modal').classList.remove('hidden');
+        }
+
+        function closeReferenceModal() {
+            document.getElementById('reference-modal').classList.add('hidden');
+        }
+        
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeReferenceModal();
+            }
+        });
+    </script>
+</body>
+</html>
